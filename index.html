@@ -27,9 +27,13 @@ h2{font-size:clamp(1.5rem,4.6vw,2.4rem);line-height:1.15;font-weight:800;margin:
 .frame>.in{background:#000;border-radius:22px;overflow:hidden;position:relative}
 .frame img{display:block;width:100%}
 .vid{aspect-ratio:16/9}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.btn{display:inline-block;background:var(--g);color:#fff;border:0;border-radius:99px;padding:17px 30px;font:600 1rem Sora,sans-serif;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px rgba(255,61,154,.35);animation:pl 2.4s infinite;transition:transform .2s}
-.btn:hover{transform:translateY(-2px) scale(1.03)}
-@keyframes pl{50%{box-shadow:0 8px 46px rgba(139,61,255,.7)}}
+/* ===== BOTÓN ANIMADO PREMIUM ===== */
+.btn{display:inline-block;background:linear-gradient(90deg,#8b3dff,#ff3d9a,#8b3dff,#ff3d9a);background-size:300% auto;color:#fff;border:0;border-radius:99px;padding:17px 30px;font:700 1.05rem Sora,sans-serif;letter-spacing:.02em;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px rgba(255,61,154,.45);animation:pl 2.2s infinite,bgflow 4s ease infinite;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.15)}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 50px rgba(255,61,154,.6)}
+.btn::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 2.8s infinite;pointer-events:none}
+@keyframes shine{0%{left:-120%}55%,100%{left:130%}}
+@keyframes bgflow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes pl{50%{box-shadow:0 8px 46px rgba(139,61,255,.85),0 0 70px rgba(255,61,154,.55)}}
 .grid{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));text-align:left}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;transition:.3s}
 .card:hover{transform:translateY(-6px);border-color:var(--p);box-shadow:0 14px 40px rgba(139,61,255,.25)}
@@ -43,6 +47,7 @@ details.lock ul{list-style:none;margin-top:18px;display:grid;gap:12px}
 details.lock li{padding-left:34px;position:relative;color:var(--mut);font-size:.92rem}
 details.lock li b{color:var(--tx)}
 details.lock li:before{content:"🎁";position:absolute;left:0}
+.vl{display:inline-block;margin-left:6px;color:var(--gold);font-weight:800;font-size:.8rem;text-decoration:line-through}
 .hot{display:inline-block;margin-top:18px;background:var(--gold);color:#2a1500;font-weight:800;border-radius:99px;padding:8px 16px;font-size:.85rem}
 /* paquetes */
 .pk{background:var(--card);border-radius:24px;padding:22px;margin-top:22px;text-align:left;border:1px solid var(--line);position:relative;overflow:hidden}
@@ -66,10 +71,10 @@ details.lock li:before{content:"🎁";position:absolute;left:0}
 .tile{border-radius:12px;padding:12px 4px;text-align:center;font-size:.72rem;font-weight:600;background:var(--card);border:1px solid var(--line)}
 .tile span{display:block;font-size:1.7rem}
 .tile b{display:block;color:var(--gold);font-size:.7rem}
+.up{margin-top:30px;border-radius:24px;padding:3px;background:linear-gradient(135deg,#ffc65c,#ff3d9a,#8b3dff);text-align:left}.up>div{background:var(--card);border-radius:22px;padding:24px;text-align:center}.up .tg{display:inline-block;background:var(--gold);color:#2a1500;font-weight:800;font-size:.72rem;letter-spacing:.1em;border-radius:99px;padding:5px 14px}.up .pr{font-size:2.6rem;font-weight:800;color:var(--gold);line-height:1.1;margin-top:10px}.up .pr s{font-size:1.1rem;color:var(--mut);font-weight:400}.up h3{font-size:1.3rem;margin-top:12px}.up p{color:var(--mut);font-size:.92rem;margin-top:8px}.up .bx{margin-top:14px;background:rgba(255,198,92,.12);border:1px dashed var(--gold);border-radius:14px;padding:12px;font-size:.9rem}.up .bx b{color:var(--gold)}
 .stack{background:var(--g);border-radius:24px;padding:26px;margin-top:26px;color:#fff}
 .stack .big{background:none;color:#fff;-webkit-text-fill-color:#fff;font-size:2.8rem}
 .stack s{opacity:.7}
-/* plan */
 .lv{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;margin-top:8px;text-align:left;font-size:.85rem}
 .lv .bar{height:12px;border-radius:9px;background:var(--line);overflow:hidden}.lv .bar i{display:block;height:100%;background:var(--g);width:0;transition:width 1.4s}
 .on .lv .bar i{width:var(--w)}
@@ -89,11 +94,11 @@ details.lock li:before{content:"🎁";position:absolute;left:0}
 <div class="orb o1"></div><div class="orb o2"></div>
 
 <section style="padding-top:28px;padding-bottom:20px">
-  <div class="frame" style="margin-top:0"><div class="in"><img src="TU_IMAGEN.webp" alt="Bienvenidos a AiviralImpacto"></div></div>
+  <div class="frame" style="margin-top:0"><div class="in"><img src="data:image/webp;base64,__BASE64_AQUI__" alt="Bienvenidos a AiviralImpacto"></div></div>
   <h1 style="margin-top:34px">Tu negocio digital que te paga <em>cada mes,</em> en automático</h1>
   <p class="l" style="margin-top:12px">🔊 Sube el volumen y mira el video completo antes de decidir.</p>
-  <div class="frame"><div class="in vid"><iframe src="https://streamable.com/e/jlvv3n" allow="fullscreen; autoplay" allowfullscreen title="Presentación"></iframe></div></div>
-  <p style="margin-top:26px"><a class="btn go" href="#">Unirme a la comunidad →</a></p>
+  <div class="frame"><div class="in vid"><iframe src="https://www.youtube.com/embed/TRQ9HXVQxNw?rel=0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Presentación"></iframe></div></div>
+  <p style="margin-top:26px"><a class="btn go" href="#">🚀 Activa tu sistema AQUÍ</a></p>
 </section>
 
 <section class="rv">
@@ -125,13 +130,13 @@ details.lock li:before{content:"🎁";position:absolute;left:0}
   <details class="lock">
     <summary>🔒 Bonos secretos solo por 48 horas <br><small style="font-weight:400;color:var(--mut)">Toca para descubrirlos</small></summary>
     <ul>
-      <li><b>Entiende la IA:</b> te ayudamos a usarla a tu favor.</li>
-      <li><b>Contenido que atrae tráfico:</b> cómo crearlo para llevar gente a tu página y vender en automático.</li>
-      <li><b>Trucos de redes sociales:</b> da a conocer tu negocio de forma más eficiente.</li>
-      <li><b>Comunidad que trabaja por ti:</b> para llevar tus ingresos al máximo nivel.</li>
-      <li><b>Recursos de activo digital:</b> un negocio trabajando para ti 24/7.</li>
+      <li><b>Entiende la IA:</b> te ayudamos a usarla a tu favor. <span class="vl">Valor $97</span></li>
+      <li><b>Contenido que atrae tráfico:</b> cómo crearlo para llevar gente a tu página y vender en automático. <span class="vl">Valor $147</span></li>
+      <li><b>Trucos de redes sociales:</b> da a conocer tu negocio de forma más eficiente. <span class="vl">Valor $97</span></li>
+      <li><b>Comunidad que trabaja por ti:</b> para llevar tus ingresos al máximo nivel. <span class="vl">Valor $49/mes</span></li>
+      <li><b>Recursos de activo digital:</b> un negocio trabajando para ti 24/7. <span class="vl">Valor $97</span></li>
     </ul>
-    <p style="text-align:center"><span class="hot">🎁 Todos son un regalo si comienzas HOY</span></p>
+    <p style="text-align:center"><span class="hot">🎁 Valor estimado: $487 · GRATIS si comienzas en 48 h</span></p>
   </details>
 </section>
 
@@ -180,9 +185,18 @@ details.lock li:before{content:"🎁";position:absolute;left:0}
     <p>Todo esto por solo</p>
     <div class="big">$28 <small style="font-size:1rem">+ impuestos</small></div>
     <p>aprox. <b>$30 al mes</b> · <s>Valor real: cientos de dólares</s></p>
-    <p style="margin-top:14px"><a class="btn go" style="background:#fff;color:#8b3dff;animation:none" href="#">Quiero mi lugar de pionero →</a></p>
+    <p style="margin-top:14px"><a class="btn go" style="background:#fff;color:#8b3dff;background-image:none" href="#">Activa tu sistema AQUÍ →</a></p>
   </div>
   <p class="l" style="margin-top:22px">Aprovecha la oportunidad de ser <b>pionero en la comunidad hispana</b> y sácale el máximo provecho.</p>
+  <div class="up"><div>
+    <span class="tg">🎁 OFERTA OPCIONAL</span>
+    <h3>Agrega esta plantilla de automatización</h3>
+    <div class="pr"><s>Valor original $399</s><br>Hoy $49.99 <small style="font-size:.9rem">/ suscripción anual</small></div>
+    <p>Una herramienta que te ayudará a <b>automatizar más tu trabajo</b> y a aumentar tus ingresos cada semana.</p>
+    <div class="bx">💰 <b>Oportunidad de reventa:</b> gana <b>$29</b> por cada suscriptor que la compre.</div>
+    <p style="margin-top:16px">Para obtenerla, escríbenos un email a <b>aiviralimpacto@gmail.com</b></p>
+    <p style="margin-top:14px"><a class="btn" href="mailto:aiviralimpacto@gmail.com?subject=Quiero%20la%20plantilla%20de%20%2449.99&body=Hola%2C%20quiero%20agregar%20la%20plantilla%20de%20automatizaci%C3%B3n%20por%20%2449.99%20(suscripci%C3%B3n%20anual).%20Mi%20nombre%20es%3A%20">✉️ Quiero la plantilla por $49.99</a></p>
+  </div></div>
 </section>
 
 <section class="rv" id="plan">
@@ -215,27 +229,31 @@ details.lock li:before{content:"🎁";position:absolute;left:0}
   <h2>Comienza <em>antes de que se expire.</em></h2>
   <p class="l">Únete ahora y aprovecha los bonos que te ayudarán a duplicar este sistema como nunca lo habías logrado.</p>
   <div class="cd"><div><b id="h">48</b><span>HORAS</span></div><div><b id="m">00</b><span>MIN</span></div><div><b id="s">00</b><span>SEG</span></div></div>
-  <a class="btn go" href="#">🔥 Unirme a la comunidad</a>
+  <a class="btn go" href="#">🚀 Activa tu sistema AQUÍ</a>
 </section>
 
 <p class="fine">Los ingresos mostrados son escenarios teóricos con todos los niveles completos y no constituyen una garantía de ganancias. Los resultados dependen del esfuerzo y las circunstancias de cada persona. Precios sujetos a impuestos locales. Wealth Step by Step y AiviralImpacto son marcas de sus respectivos titulares. © 2026 AiviralImpacto.</p>
 
-<div class="bar2"><a class="btn go" href="#">🔥 Unirme a la comunidad</a></div>
+<div class="bar2"><a class="btn go" href="#">🚀 Activa tu sistema AQUÍ</a></div>
 
 <script>
-var WA="13232850508",JOIN=""; // JOIN: pega tu enlace de registro; si queda vacío, abre WhatsApp
-var msg=encodeURIComponent("🔥 Hola, ya vi la presentación y quiero unirme a la comunidad y asegurar mis bonos de 48 horas. ¿Cuál es el siguiente paso?");
-document.querySelectorAll(".go").forEach(function(a){a.href=JOIN||"https://wa.me/"+WA+"?text="+msg;a.target="_blank";a.rel="noopener"});
+/* Enlace de registro — todos los botones .go apuntan aquí */
+var JOIN="https://wealthstepbystep.net/soar/signup.asp?EH0508";
+document.querySelectorAll(".go").forEach(function(a){a.href=JOIN;a.target="_blank";a.rel="noopener"});
+
 /* libros */
 var T=["Mentalidad Ganadora","Finanzas Smart","Hábitos de Éxito","Liderazgo","Salud y Energía","Ventas Pro","Dinero Libre","Productividad","Desarrollo Personal","Marca Personal","Emprende Hoy","Disciplina"],C=["#8b3dff","#ff3d9a","#6a2cd6","#e0307f","#a65bff","#ff6fb5"],sh=document.getElementById("shelf");
 T.forEach(function(t,i){var b=document.createElement("div");b.className="bk";b.textContent=t;b.style.background=C[i%6];b.style.height=(110+(i*17)%40)+"px";sh.appendChild(b)});
+
 /* niveles */
 var L=document.getElementById("lvls"),mx=19683;
 for(var n=1;n<=8;n++){var pay=n==1?10:(n==8?3:2),tot=Math.pow(3,n)*pay;
 L.insertAdjacentHTML("beforeend",'<div class="lv"><span>Niv. '+n+'</span><div class="bar"><i style="--w:'+Math.max(4,tot/mx*100)+'%"></i></div><b>$'+tot.toLocaleString("en-US")+'</b></div>')}
+
 /* reveal */
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+
 /* cuenta regresiva 48 h desde la primera visita */
 var end=Date.now()+48*36e5;
 try{var s=localStorage.getItem("aviEnd");if(s&&+s>Date.now())end=+s;else localStorage.setItem("aviEnd",end)}catch(e){}
