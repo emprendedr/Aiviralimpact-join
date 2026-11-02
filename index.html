@@ -26,6 +26,23 @@ h2{font-size:clamp(1.5rem,4.6vw,2.4rem);line-height:1.15;font-weight:800;margin:
 @keyframes gl{to{opacity:.62}}
 .frame>.in{background:#000;border-radius:22px;overflow:hidden;position:relative}
 .frame img{display:block;width:100%}
+
+/* NUEVA CLASE PARA LA IMAGEN HERO RESPONSIVE */
+.hero-img{
+  width:100%;
+  aspect-ratio:21/9; /* Panorámica en escritorio */
+  max-height:520px;   /* Evita que sea demasiado alta en pantallas grandes */
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+@media (max-width:600px){
+  .hero-img{
+    aspect-ratio:4/3;   /* Más vertical en móvil para no recortar tanto */
+    max-height:380px;
+  }
+}
+
 .vid{aspect-ratio:16/9}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 /* ===== BOTÓN ANIMADO PREMIUM ===== */
 .btn{display:inline-block;background:linear-gradient(90deg,#8b3dff,#ff3d9a,#8b3dff,#ff3d9a);background-size:300% auto;color:#fff;border:0;border-radius:99px;padding:17px 30px;font:700 1.05rem Sora,sans-serif;letter-spacing:.02em;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px rgba(255,61,154,.45);animation:pl 2.2s infinite,bgflow 4s ease infinite;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.15)}
@@ -94,7 +111,17 @@ details.lock li:before{content:"🎁";position:absolute;left:0}
 <div class="orb o1"></div><div class="orb o2"></div>
 
 <section style="padding-top:28px;padding-bottom:20px">
-  <div class="frame" style="margin-top:0"><div class="in"><img src="data:image/webp;base64,__BASE64_AQUI__" alt="Bienvenidos a AiviralImpacto"></div></div>
+  <div class="frame" style="margin-top:0">
+    <div class="in">
+      <img 
+        class="hero-img" 
+        src="https://raw.githubusercontent.com/emprendedr/Aiviralimpact-join/main/IMG_9595.jpeg" 
+        alt="Bienvenidos a AiviralImpacto"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+  </div>
   <h1 style="margin-top:34px">Tu negocio digital que te paga <em>cada mes,</em> en automático</h1>
   <p class="l" style="margin-top:12px">🔊 Sube el volumen y mira el video completo antes de decidir.</p>
   <div class="frame"><div class="in vid"><iframe src="https://www.youtube.com/embed/TRQ9HXVQxNw?rel=0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Presentación"></iframe></div></div>
